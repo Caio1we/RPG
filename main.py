@@ -17,7 +17,8 @@ classes = {
                 "type": "staff",
                 "damage": 5,
                 "damage_critic": 10,
-                "chance_to_critic": 0.10
+                "chance_to_critic": 0.10,
+                "spent_mana": 0,
             },
 
             "thunder": {
@@ -81,8 +82,9 @@ def menu():
 # A fábrica de criar jogador. É aqui que o usuário dita quem ele vai ser.
 
 def attack(enemy, weapon, currentEnergy, ammo=None,):
+
     if currentEnergy < weapon["spent_stamina"] or currentEnergy < weapon["spent_mana"]:
-        return 0,0, False
+        return enemy["health"], currentEnergy, False
     match weapon["type"]:
         case "sword":
             if try_critic(weapon["chance_to_critic"]):
@@ -90,7 +92,7 @@ def attack(enemy, weapon, currentEnergy, ammo=None,):
             return enemy["health"] - weapon["damage"], currentEnergy - weapon["spent_stamina"]
         case "bow":
             if ammo == None:
-                return 0,0 , False
+                return enemy["health"], currentEnergy , False
             if  try_critic(ammo["chance_to_critic"]):
                 return enemy["health"] - ammo["damage_critic"], currentEnergy - weapon["spent_stamina"], True
             return enemy["health"] - ammo["damage"], currentEnergy - weapon["spent_stamina"], True
