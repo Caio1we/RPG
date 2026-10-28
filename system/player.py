@@ -48,6 +48,7 @@ def create_player():
                     "name": name,
                     "class": CLASSES[class_choiced]["name"],
                     "level": 0, "xp": 0, "money": 0,
+                    "stage_level": 1,
                     "health": CLASSES[class_choiced]["health"],
                     "mana": CLASSES[class_choiced]["mana"], 
                     "inventory": CLASSES[class_choiced]["starter_weapons"] }
@@ -58,6 +59,7 @@ def create_player():
                     "name": name,
                     "class": CLASSES[class_choiced]["name"],
                     "level": 0, "xp": 0, "money": 0,
+                    "stage_level": 1,
                     "health": CLASSES[class_choiced]["health"],
                     "stamina": CLASSES[class_choiced]["stamina"],
                     "inventory": CLASSES[class_choiced]["starter_weapons"] }
