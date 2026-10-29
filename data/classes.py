@@ -17,7 +17,7 @@ CLASSES = {
                 "type": "spell",
                 "damage": 35,
                 "damage_critic": 75,
-                "spent_mana": 60,
+                "cost": 60,
                 "chance_to_critic": 0.10
             }
         }
@@ -31,7 +31,7 @@ CLASSES = {
             "wooden_bow": {
                 "rarity": "common",
                 "type": "bow",
-                "spent_stamina": 10
+                "cost": 10
             },
 
             "normal_arrow": {
@@ -53,7 +53,7 @@ CLASSES = {
                 "rarity": "common",
                 "type": "sword",
                 "damage": 25,
-                "stamina_spend": 50,
+                "cost": 50,
                 "chance_to_critic": 0.10,
                 "damage_critic": 50,
             },
