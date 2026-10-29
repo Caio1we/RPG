@@ -9,7 +9,7 @@ def create_player():
     name_classes = {}    # Outra caixa vazia. Vai servir para numerar as classes (ex: 0 é Mago, 1 é Arqueiro...)
 
     print("Available classes: ")
-    for i, classe in enumerate(CLASSES):  # O loop 'for' vai ler o catálogo de classes e o 'enumerate' vai dando números para elas (0, 1, 2...)
+    for i, classe in enumerate(CLASSES, 1):  # O loop 'for' vai ler o catálogo de classes e o 'enumerate' vai dando números para elas (0, 1, 2...)
         print(f"[{i}] - {classe}") # Mostra na tela o número e o nome da classe
         name_classes.update({i: classe}) # Guarda na nossa caixinha: {0: "mage", 1: "archer"...}
 
