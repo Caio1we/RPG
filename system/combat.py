@@ -1,7 +1,7 @@
-def attack(enemy, weapon, ammo=None,) :
+def attack(enemy, weapon, ammo=None) :
     enemy_health = enemy["health"]
-    dealt_damage = enemy_health - weapon["damage"]
-    dealt_critic_damage = enemy_health - weapon["damage_critic"]
+    dealt_damage = weapon["damage"]
+    dealt_critic_damage = weapon["damage_critic"]
     if ammo:
         if try_critic["chance_to_critic"]:
             return enemy_health - ammo["damage_critic"]
