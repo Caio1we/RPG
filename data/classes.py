@@ -27,20 +27,16 @@ CLASSES = {
         "health": 70,
         "stamina": 100,
         "description": "um soldado que se rebelou contra a nobreza e acabou sendo exilado do exercito e começou uma revolução onde ele trabalha roubandos dos nobres. Começa com seu antigo arco que ele usava no exercito e com suas flechas roubadas de quarteis da cidade.",
+        "starter_arrows": 10,
         "starter_weapons": {
             "wooden_bow": {
                 "rarity": "common",
                 "type": "bow",
-                "cost": 10
-            },
-
-            "normal_arrow": {
-                "rarity": "common",
-                "type": "arrow",
+                "cost": 10,
                 "damage": 15,
                 "damage_critic": 30,
                 "chance_to_critic": 0.10,
-            }
+            },
         }
     },
     "warrior": {

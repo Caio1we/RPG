@@ -54,6 +54,17 @@ def create_player():
                     "inventory": CLASSES[class_choiced]["starter_weapons"] }
                 
             if "stamina" in CLASSES[class_choiced]: # Mas se a classe usa STAMINA (tipo o Guerreiro ou Arqueiro)...
+                if CLASSES[class_choiced] == "archer":
+                    player_data = {
+                        "name": name,
+                        "class": CLASSES[class_choiced]["name"],
+                        "level": 0, "xp": 0, "money": 0,
+                        "stage_level": 1,
+                        "health": CLASSES[class_choiced]["health"],
+                        "stamina": CLASSES[class_choiced]["stamina"],
+                        "inventory": CLASSES[class_choiced]["starter_weapons"],
+                        "arrows: CLASSES[class_choiced]["starter_arrows"],
+                    }
                 # Enche a ficha do jogador com os status de stamina
                 player_data = {
                     "name": name,
