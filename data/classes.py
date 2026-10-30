@@ -1,6 +1,7 @@
 CLASSES = {
     "mage": {
         "name": "mage",
+        "max_health": 75,
         "health": 75,
         "mana": 175,
         "description": "é um feiticeiro muito poderoso, uma lenda da magia que salvava pessoas e fazia missões para o reino, mas foi expulso por desobedecer ordens e vive afastado em uma cabana. Ele começa usando um cajado mágico de madeira.",
@@ -27,6 +28,7 @@ CLASSES = {
     },
     "archer": {
         "name": "archer",
+        "max_health": 70
         "health": 70,
         "stamina": 100,
         "description": "um soldado que se rebelou contra a nobreza e acabou sendo exilado do exercito e começou uma revolução onde ele trabalha roubandos dos nobres. Começa com seu antigo arco que ele usava no exercito e com suas flechas roubadas de quarteis da cidade.",
@@ -44,6 +46,7 @@ CLASSES = {
     },
     "warrior": {
         "name": "warrior",
+        "max_health": 120
         "health": 120,
         "stamina": 100,
         "description": "guardião de um antigo reino perdido e ainda pensa que está protegendo uma cidade. Ele é habilidoso com armas corpo a corpo, mas não tem habilidade com outros tipos de armas. Começa com uma espada longa e uma espada curta.",

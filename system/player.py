@@ -50,6 +50,7 @@ def create_player():
                     "level": 0, "xp": 0, "money": 0,
                     "stage_level": 1,
                     "health": CLASSES[class_choiced]["health"],
+                    "max_health": CLASSES[class_choiced]["max_health"]
                     "mana": CLASSES[class_choiced]["mana"], 
                     "inventory": CLASSES[class_choiced]["starter_weapons"] }
                 
@@ -60,6 +61,7 @@ def create_player():
                         "class": CLASSES[class_choiced]["name"],
                         "level": 0, "xp": 0, "money": 0,
                         "stage_level": 1,
+                        "max_health": CLASSES[class_choiced]["max_health"]
                         "health": CLASSES[class_choiced]["health"],
                         "stamina": CLASSES[class_choiced]["stamina"],
                         "inventory": CLASSES[class_choiced]["starter_weapons"],
@@ -72,6 +74,7 @@ def create_player():
                     "level": 0, "xp": 0, "money": 0,
                     "stage_level": 1,
                     "health": CLASSES[class_choiced]["health"],
+                    "max_health": CLASSES[class_choiced]["max_health"]
                     "stamina": CLASSES[class_choiced]["stamina"],
                     "inventory": CLASSES[class_choiced]["starter_weapons"] }
             break # Quebra o loop infinito do "While True" porque o jogador foi criado com sucesso!
