@@ -93,3 +93,14 @@ def level_up(player):
     player["max_health"] += 50
     player["health"] += 25
 
+def heal_player(player, amount):
+    max_health = player["max_health"]
+    health_healed = player["health"] + amount
+    if player["health"] >= max_health:
+        return 0
+    if health_healed > max_health:
+        amount = max_health - player["health"]
+    player["health"] += amount
+    return amount
+
+
