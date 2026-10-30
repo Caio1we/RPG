@@ -9,7 +9,10 @@ CLASSES = {
             "wooden_staff":{
                 "rarity": "common",
                 "type": "staff",
-                "damage": 5
+                "damage": 5,
+                "damage_critic": 10,
+                "cost": 0,
+                "chance_to_critic": 0.10,
             },
 
             "thunder": {
