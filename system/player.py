@@ -63,7 +63,7 @@ def create_player():
                         "health": CLASSES[class_choiced]["health"],
                         "stamina": CLASSES[class_choiced]["stamina"],
                         "inventory": CLASSES[class_choiced]["starter_weapons"],
-                        "arrows: CLASSES[class_choiced]["starter_arrows"],
+                        "arrows": CLASSES[class_choiced]["starter_arrows"],
                     }
                 # Enche a ficha do jogador com os status de stamina
                 player_data = {
