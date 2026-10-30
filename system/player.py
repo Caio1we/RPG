@@ -6,15 +6,16 @@ from ui.menu import clear
 def create_player():
 
     name = input("Type your name: ")     # Pergunta o nome do cidadão e guarda na variável 'name'  
+    clear()
 
     name_classes = {}    # Outra caixa vazia. Vai servir para numerar as classes (ex: 0 é Mago, 1 é Arqueiro...)
-
-    print("Available classes: ")
-    for i, classe in enumerate(CLASSES, 1):  # O loop 'for' vai ler o catálogo de classes e o 'enumerate' vai dando números para elas (0, 1, 2...)
-        print(f"[{i}] - {classe}") # Mostra na tela o número e o nome da classe
-        name_classes.update({i: classe}) # Guarda na nossa caixinha: {0: "mage", 1: "archer"...}
-
     while True:     # Loop infinito! Fica rodando até o cara parar de ser burro e escolher uma classe que existe.
+        print("Available classes: ")
+        for i, classe in enumerate(CLASSES, 1):  # O loop 'for' vai ler o catálogo de classes e o 'enumerate' vai dando números para elas (0, 1, 2...)
+            print(f"[{i}] - {classe}") # Mostra na tela o número e o nome da classe
+            name_classes.update({i: classe}) # Guarda na nossa caixinha: {0: "mage", 1: "archer"...}
+
+
         chice = int(input("Select one class available: "))  # Pede um número pro usuário. O int() transforma em numero
         # esse numero vai ser usado pra procurar dentro da caixa name_classes
 
@@ -23,7 +24,8 @@ def create_player():
             clear()
             print("Class not found, try again")
             continue
-        
+        clear()
+        print(f"selected class: {name_classes[chice]}")
         print(f"Description: {CLASSES[name_classes[chice]]["description"]}") 
         # O usuário digita 1, então: chice = 1
         # O Python lê de dentro para fora:
@@ -42,7 +44,7 @@ def create_player():
 
         if choice == "Y":        # Se ele digitou Y (Sim)...
             class_choiced = name_classes[chice] # Salva o nome da classe escolhida (ex: "mage")
-            print(class_choiced)
+            clear()
             print(f"Class chosen = {class_choiced}")
             if "mana" in CLASSES[class_choiced]: # Se a classe escolhida usa MANA (tipo o Mago)...
                 # Enche a ficha do jogador com os status de mago
@@ -80,6 +82,7 @@ def create_player():
                     "stamina": CLASSES[class_choiced]["stamina"],
                     "inventory": CLASSES[class_choiced]["starter_weapons"] }
             break # Quebra o loop infinito do "While True" porque o jogador foi criado com sucesso!
+        clear()
 
 
     return player_data
