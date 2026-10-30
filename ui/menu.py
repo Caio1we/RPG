@@ -4,3 +4,10 @@ def menu():
     print("[0] - Sair")
 
 
+
+def battle_menu():
+    print("[1] - Atacar")
+    print("[2] - Inspecionar")
+
+
+
