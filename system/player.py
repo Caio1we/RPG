@@ -89,7 +89,7 @@ def create_player():
 
 def level_up(player):
     player["level"] += 1
-    player["exp"] = 0
+    player["xp"] = 0
     player["max_health"] += 50
     player["health"] += 25
 
