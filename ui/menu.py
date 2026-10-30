@@ -1,3 +1,4 @@
+import os
 def menu():
     print("[1] - Jogar")
     print("[0] - Sair")
@@ -14,6 +15,8 @@ def select_weapon_menu(inventory):
     weapon_choiced = inventory[weapons_name[weapon_choiced]]
     return weapon_choiced
 
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def battle_menu():
