@@ -29,6 +29,7 @@ def battle(enemy, player):
     while enemy["health"] > 0:
         clear()
         if player_turn:
+            print(f"Nivel: {player["stage_level"]}")
             print(f"{enemy["name"]} - {enemy["health"]} HP")
             if player["class"] == "mage":
                 print(f"{player["name"]} - {player["health"]} HP - {player["mana"]} mana")

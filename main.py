@@ -17,7 +17,6 @@ while True:
                 player_data = create_player() # Chama a função de criar o jogador!
                 continue
             while player_data["health"] > 0:
-                print(f"Nivel: {player_data["stage_level"]}")
                 actual_enemy = create_enemy(player_data["stage_level"])
                 print(f"{actual_enemy["name"]} apareceu! Lute com ele")
                 battle(actual_enemy, player_data)
