@@ -53,6 +53,7 @@ def create_player():
                     "class": CLASSES[class_choiced]["name"],
                     "level": 0, "xp": 0, "money": 0,
                     "stage_level": 1,
+                    "xp_to_level": 100,
                     "health": CLASSES[class_choiced]["health"],
                     "max_health": CLASSES[class_choiced]["max_health"],
                     "mana": CLASSES[class_choiced]["mana"], 
@@ -64,6 +65,7 @@ def create_player():
                         "name": name,
                         "class": CLASSES[class_choiced]["name"],
                         "level": 0, "xp": 0, "money": 0,
+                        "xp_to_level": 100,
                         "stage_level": 1,
                         "max_health": CLASSES[class_choiced]["max_health"],
                         "health": CLASSES[class_choiced]["health"],
@@ -77,6 +79,7 @@ def create_player():
                     "class": CLASSES[class_choiced]["name"],
                     "level": 0, "xp": 0, "money": 0,
                     "stage_level": 1,
+                    "xp_to_level": 100,
                     "health": CLASSES[class_choiced]["health"],
                     "max_health": CLASSES[class_choiced]["max_health"],
                     "stamina": CLASSES[class_choiced]["stamina"],
@@ -89,9 +92,16 @@ def create_player():
 
 def level_up(player):
     player["level"] += 1
-    player["xp"] = 0
+    player["xp"] -= player["xp_to_level"]
+    player["xp_to_level"] = int(player["xp_to_level"] * 1.5)
     player["max_health"] += 50
-    player["health"] += 25
+    heal_player(player, 25)
+    print(f"LEVEL UP! você subiu para o nivel {player["level"]}")
+def gain_xp(player, amount):
+    player["xp"] += amount
+    while player["xp"] >= player["xp_to_level"]:
+        level_up(player)
+
 
 def heal_player(player, amount):
     max_health = player["max_health"]
@@ -101,6 +111,5 @@ def heal_player(player, amount):
     if health_healed > max_health:
         amount = max_health - player["health"]
     player["health"] += amount
-    return amount
 
 
