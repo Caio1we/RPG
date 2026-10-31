@@ -1,5 +1,5 @@
 import random
-from ui.menu import battle_menu, select_weapon_menu
+from ui.menu import battle_menu, select_weapon_menu, clear
 
 def attack(enemy, weapon, ammo=None) :
     enemy_health = enemy["health"]
@@ -7,13 +7,14 @@ def attack(enemy, weapon, ammo=None) :
     dealt_critic_damage = weapon["damage_critic"]
     if ammo:
         if try_critic["chance_to_critic"]:
-            return enemy_health - ammo["damage_critic"]
-            return enemy_health - ammo["damage"]
+            return enemy_health - ammo["damage_critic"], True
+        else:
+            return enemy_health - ammo["damage"], False
 
     if try_critic(weapon["chance_to_critic"]):
-        return dealt_critic_damage
+        return dealt_critic_damage, True
     else:
-        return dealt_damage
+        return dealt_damage, False
 
 
 
@@ -26,6 +27,7 @@ def try_critic(chance):
 def battle(enemy, player):
     player_turn = True
     while enemy["health"] > 0:
+        clear()
         if player_turn:
             print(f"{enemy["name"]} - {enemy["health"]} HP")
             if player["class"] == "mage":
@@ -37,10 +39,25 @@ def battle(enemy, player):
             match action_choiced:
                 case 1:
                     weapon_choiced = select_weapon_menu(player["inventory"])
-                    damage = attack(enemy, weapon_choiced)
-                    print(f"Você deu {damage} de dano")
+                    if player["class"] == "mage":
+                        if player["mana"] < weapon_choiced["cost"]:
+                            print("NÃO CONSEGUE USAR ATAQUE, MANA INSUFICIENTE")
+                            input("Pressione ENTER para continuar...")
+                            continue
+                    else:
+                        if player["stamina"] < weapon_choiced["cost"]:
+                            print("NÃO CONSEGUE USAR ATAQUE, STAMINA INSUFICIENTE")
+                            input("Pressione ENTER para continuar...")
+                            continue
+                    damage, critic = attack(enemy, weapon_choiced)
+                    if critic:
+                        print(f"CRITICO! Você deu {damage}")
+                        input("Pressione ENTER para continuar...")
+                    else: 
+                        print(f"Você deu {damage} de dano")
+                        input("Pressione ENTER para continuar...")
                     enemy["health"] -= damage
-                    if player["mana"]:
+                    if player["class"] == "mage":
                         player["mana"] -= weapon_choiced["cost"]
                     else:
                         player["stamina"] -= weapon_choiced["cost"]
@@ -49,6 +66,8 @@ def battle(enemy, player):
                 case 2:
                     print(enemy["description"])
         player["health"] -= enemy["damage"]
+        print(f"Você recebeu {enemy["damage"]} de dano")
+        input("Pressione ENTER para continuar...")
         player_turn = True
         if player["health"] <= 0:
             return False
