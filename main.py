@@ -1,5 +1,5 @@
 from data.classes import CLASSES
-from system.player import create_player
+from system.player import create_player, gain_xp
 from system.enemy import create_enemy
 from system.combat import battle
 from ui.menu import menu
@@ -22,6 +22,7 @@ while True:
                 print(f"{actual_enemy["name"]} apareceu! Lute com ele")
                 battle(actual_enemy, player_data)
                 player_data["stage_level"] += 1
+                gain_xp(player_data, actual_enemy["xp"])
             print("Você morreu!")
             break
 
