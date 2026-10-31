@@ -8,6 +8,7 @@ CLASSES = {
         "starter_weapons": {
 
             "wooden_staff":{
+                "name": "Cajado de madeira",
                 "rarity": "common",
                 "type": "staff",
                 "damage": 5,
@@ -17,6 +18,7 @@ CLASSES = {
             },
 
             "thunder": {
+                "name": "Feitiço de trovão",
                 "rarity": "common",
                 "type": "spell",
                 "damage": 35,
@@ -35,6 +37,7 @@ CLASSES = {
         "starter_arrows": 10,
         "starter_weapons": {
             "wooden_bow": {
+                "name": "Arco de madeira",
                 "rarity": "common",
                 "type": "bow",
                 "cost": 10,
@@ -52,6 +55,7 @@ CLASSES = {
         "description": "guardião de um antigo reino perdido e ainda pensa que está protegendo uma cidade. Ele é habilidoso com armas corpo a corpo, mas não tem habilidade com outros tipos de armas. Começa com uma espada longa e uma espada curta.",
         "starter_weapons": {
             "long_sword": {
+                "name": "Espada Longa",
                 "rarity": "common",
                 "type": "sword",
                 "damage": 25,
