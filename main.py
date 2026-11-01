@@ -17,13 +17,18 @@ while True:
                 player_data = create_player() # Chama a função de criar o jogador!
                 continue
             while player_data["health"] > 0:
+                if player_data["stage_level"] != 1:
+                    continuar = input("Deseja continuar para a próxima fase? Y/N: ").upper()
+                    if continuar == "N":
+                        break
                 actual_enemy = create_enemy(player_data["stage_level"])
                 print(f"{actual_enemy["name"]} apareceu! Lute com ele")
                 battle(actual_enemy, player_data)
                 player_data["stage_level"] += 1
                 gain_xp(player_data, actual_enemy["xp"])
-            print("Você morreu!")
-            break
+            if player_data["health"] <= 0:
+                print("Você morreu!")
+                break
 
             
         case 2:
