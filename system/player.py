@@ -77,7 +77,7 @@ def create_player():
                 player_data = {
                     "name": name,
                     "class": CLASSES[class_choiced]["name"],
-                    "level": 0, "xp": 0, "money": 0,
+                    "level": 1, "xp": 0, "money": 0,
                     "stage_level": 1,
                     "xp_to_level": 100,
                     "health": CLASSES[class_choiced]["health"],
