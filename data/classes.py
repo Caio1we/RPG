@@ -29,26 +29,6 @@ CLASSES = {
             }
         }
     },
-    "archer": {
-        "name": "archer",
-        "max_health": 70,
-        "health": 70,
-        "max_stamina": 100,
-        "stamina": 100,
-        "description": "um soldado que se rebelou contra a nobreza e acabou sendo exilado do exercito e começou uma revolução onde ele trabalha roubandos dos nobres. Começa com seu antigo arco que ele usava no exercito e com suas flechas roubadas de quarteis da cidade.",
-        "starter_arrows": 10,
-        "starter_weapons": {
-            "wooden_bow": {
-                "name": "Arco de madeira",
-                "rarity": "common",
-                "type": "bow",
-                "cost": 10,
-                "damage": 15,
-                "damage_critic": 30,
-                "chance_to_critic": 0.10,
-            },
-        }
-    },
     "warrior": {
         "name": "warrior",
         "max_health": 120,
