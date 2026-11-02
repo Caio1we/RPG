@@ -57,9 +57,12 @@ def create_player():
                     "xp_to_level": 100,
                     "health": CLASSES[class_choiced]["health"],
                     "max_health": CLASSES[class_choiced]["max_health"],
+                    "max_mana": CLASSES[class_choiced]["max_mana"],
                     "mana": CLASSES[class_choiced]["mana"], 
                     "inventory": {
-                        "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"mana_potion": 5}}}
+                        "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"mana_potion": {"name": "Poção de mana", "quantity": 5}},
+                    },
+                }
             elif "stamina" in CLASSES[class_choiced]: # Mas se a classe usa STAMINA (tipo o Guerreiro ou Arqueiro)...
                 if class_choiced == "archer":
                     player_data = {
@@ -72,10 +75,11 @@ def create_player():
                         "stage_level": 1,
                         "max_health": CLASSES[class_choiced]["max_health"],
                         "health": CLASSES[class_choiced]["health"],
+                        "max_stamina": CLASSES[class_choiced]["max_stamina"],
                         "stamina": CLASSES[class_choiced]["stamina"],
                         "inventory": {
                             "weapons": CLASSES[class_choiced]["starter_weapons"],
-                            "potions": {"stamina_potion": 5}
+                            "potions": {"stamina_potion": {"name": "Poção de mana", "quantity": 5}}
                         },
                         "arrows": CLASSES[class_choiced]["starter_arrows"]
                     }
@@ -89,9 +93,10 @@ def create_player():
                         "xp_to_level": 100,
                         "health": CLASSES[class_choiced]["health"],
                         "max_health": CLASSES[class_choiced]["max_health"],
+                        "max_stamina": CLASSES[class_choiced]["max_stamina"],
                         "stamina": CLASSES[class_choiced]["stamina"],
                         "inventory": {
-                             "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"stamina_potion": 5},
+                            "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"stamina_potion": {"name": "Poção de stamina", "quantity": 5}},
                         },
                     }
             break # Quebra o loop infinito do "While True" porque o jogador foi criado com sucesso!
