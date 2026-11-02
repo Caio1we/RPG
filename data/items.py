@@ -1,0 +1,32 @@
+SWORDS = {
+    "rusty_sword": {
+        "name": "Espada enferrujada",
+        "rarity": "common",
+        "type": "sword",
+        "damage": 15,
+        "cost": 10,
+        "chance_to_critic": 0.10,
+        "damage_critic": 30,
+        "price": 20,
+    },
+    "iron_sword": {
+        "name": "Espada de ferro",
+        "rarity": "uncommon",
+        "type": "sword",
+        "damage": 25,
+        "cost": 15,
+        "chance_to_critic": 0.15,
+        "damage_critic": 50,
+        "price": 50,
+    },
+    "glacial_sword": {
+        "name": "Espada glacial",
+        "rarity": "rare",
+        "type": "sword",
+        "damage": 50,
+        "cost": 20,
+        "chance_to_critic": 0.20,
+        "damage_critic": 80,
+        "price": 250,
+    }
+}
