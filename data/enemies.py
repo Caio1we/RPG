@@ -3,6 +3,7 @@ ENEMIES = {
         "name": "NosreffeJ",
         "health": 67,
         "xp": 67,
+        "money": 67,
         "damage": 6,
         "description": ""
     },
@@ -10,6 +11,7 @@ ENEMIES = {
         "name": "Ecsra",
         "health": 200,
         "xp": 50,
+        "money": 100,
         "damage": 1,
         "description": "Um antigo cidadão da cidadela, ele era um grande guerreiro, se tornou gordo e foi expulso do exercito"
     },
@@ -17,6 +19,7 @@ ENEMIES = {
         "name": "Zumbi",
         "health": 100,
         "xp": 25,
+        "money": 50,
         "damage": 10,
         "description": "É um simples zumbi"
     }

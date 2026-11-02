@@ -1,6 +1,6 @@
 import random
 from ui.menu import battle_menu, select_weapon_menu, clear, select_potion_menu
-from system.player import heal_amount
+from system.player import heal_amount, gain_xp
 from data.potions import POTIONS
 
 def attack(enemy, weapon, ammo=None) :
@@ -42,7 +42,6 @@ def battle(enemy, player):
             match action_choiced:
                 case 1:
                     weapon_choiced = select_weapon_menu(player["inventory"]["weapons"])
-                    print(weapon_choiced)
                     if player["class"] == "mage":
                         if player["mana"] < weapon_choiced["cost"]:
                             print("NÃO CONSEGUE USAR ATAQUE, MANA INSUFICIENTE")
@@ -72,7 +71,6 @@ def battle(enemy, player):
                 case 3:
                     selected_potion, atribute = select_potion_menu(player["inventory"]["potions"])
                     player["inventory"]["potions"][selected_potion]["quantity"] -= 1
-                    print(selected_potion, atribute)
                     healed = heal_amount(player, atribute, POTIONS[selected_potion]["restore_amount"])
                     print(f"Você recuperou {healed} de {atribute}")
         print(f"Você recebeu {enemy["damage"]} de dano")
@@ -81,8 +79,10 @@ def battle(enemy, player):
         if player["health"] <= 0:
             return False
     print("Inimigo derrotado!")
+    print(f"Você recebeu {enemy["money"]} de ouro e {enemy["xp"]} de experiência")
+    player["money"] += enemy["money"]
+    gain_xp(player, enemy["xp"])
     return True
-        
 
 
 
