@@ -2,7 +2,8 @@ from data.classes import CLASSES
 from system.player import create_player, gain_xp
 from system.enemy import create_enemy
 from system.combat import battle
-from ui.menu import menu
+from ui.menu import menu, shop_menu
+
 player_data = {}
 
 while True:
@@ -33,5 +34,7 @@ while True:
             
         case 2:
             print(player_data)
+        case 3:
+            shop_menu(player_data)
         case 0:
             break

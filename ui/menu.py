@@ -1,7 +1,11 @@
 import os
 from data.potions import POTIONS
+from data.items import SWORDS
+from system.shop import get_avaiable_potions_per_class, get_random_item_by_classes, buy_item
 def menu():
     print("[1] - Jogar")
+    print("[2] - Ver status")
+    print("[3] - Loja")
     print("[0] - Sair")
 
 
@@ -38,3 +42,28 @@ def select_potion_menu(inventory):
     potion_choiced = potions_name[potion_choiced]
     atribute = POTIONS[potion_choiced]["atribute"]
     return potion_choiced, atribute
+
+def shop_menu(player_data):
+    if not player_data:
+        print("Você precisa criar um personagem antes de acessar a loja.")
+        return
+    itens = []
+    itens_names = {}
+    for _ in range(2):
+        item = get_random_item_by_classes(player_data["class"])
+        itens.append(item)
+    potions = get_avaiable_potions_per_class(player_data["class"])
+    for potion in potions:
+        itens.append(POTIONS[potion])
+    for i, item in enumerate(itens, 1):
+        print(f"[{i}] - {item["name"]} - Preço: {item["price"]}")
+        itens_names.update({i: item["name"]})
+    print("[0] - Sair da loja")
+    choiced_item = int(input("Selecione o item que deseja comprar: "))
+    if choiced_item == 0:
+        return
+    print(f"Você selecionou: {itens_names[choiced_item]}")
+    buy_item(player_data, itens[choiced_item - 1])
+
+
+
