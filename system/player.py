@@ -122,13 +122,14 @@ def gain_xp(player, amount):
         level_up(player)
 
 
-def heal_player(player, amount):
-    max_health = player["max_health"]
-    health_healed = player["health"] + amount
-    if player["health"] >= max_health:
+def heal_amount(player, atribute, amount, ):
+    max_amount = player["max_"+ atribute]
+    health_healed = player[atribute] + amount
+    if player[atribute] >= max_amount:
         return 0
-    if health_healed > max_health:
-        amount = max_health - player["health"]
-    player["health"] += amount
+    if health_healed > max_amount:
+        amount = max_amount - player[atribute]
+    player[atribute] += amount
+    return amount
 
 
