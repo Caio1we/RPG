@@ -33,5 +33,5 @@ while True:
             
         case 2:
             print(player_data)
-        case 3:
+        case 0:
             break
