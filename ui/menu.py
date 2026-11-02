@@ -1,4 +1,5 @@
 import os
+from data.potions import POTIONS
 def menu():
     print("[1] - Jogar")
     print("[0] - Sair")
@@ -22,6 +23,18 @@ def clear():
 def battle_menu():
     print("[1] - Atacar")
     print("[2] - Inspecionar")
+    print("[3] - potions")
 
-
-
+def select_potion_menu(inventory):
+    index = 1
+    potions_name = {}
+    print(inventory)
+    for i, key in enumerate(inventory, 1):
+        potion = inventory[key]
+        print(f"[{index}] - {potion["name"]}")
+        potions_name.update({index: key})
+        index += 1
+    potion_choiced = int(input("Selecione a poção: "))
+    potion_choiced = potions_name[potion_choiced]
+    atribute = POTIONS[potion_choiced]["atribute"]
+    return potion_choiced, atribute
