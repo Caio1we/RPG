@@ -5,7 +5,7 @@ POTIONS = {
         "description": "Recupera 30 pontos de vida.",
         "heal_amount": 30,
         "rarity": "common",
-        "sell_price": 20
+        "price": 20
     },
 
     "mana_potion": {
@@ -14,7 +14,7 @@ POTIONS = {
         "description": "Recupera 40 pontos de mana.",
         "restore_amount": 40,
         "rarity": "common",
-        "sell_price": 25
+        "price": 25
     },
 
     "stamina_potion": {
@@ -23,6 +23,6 @@ POTIONS = {
         "description": "Recupera 40 pontos de stamina.",
         "restore_amount": 40,
         "rarity": "common",
-        "sell_price": 25
+        "price": 25
     }
 }
