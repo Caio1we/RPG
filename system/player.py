@@ -1,5 +1,6 @@
 from data.classes import CLASSES
 from ui.menu import clear
+from data.potions import POTIONS
 
 
 
@@ -57,33 +58,42 @@ def create_player():
                     "health": CLASSES[class_choiced]["health"],
                     "max_health": CLASSES[class_choiced]["max_health"],
                     "mana": CLASSES[class_choiced]["mana"], 
-                    "inventory": CLASSES[class_choiced]["starter_weapons"] }
-                
-            if "stamina" in CLASSES[class_choiced]: # Mas se a classe usa STAMINA (tipo o Guerreiro ou Arqueiro)...
-                if CLASSES[class_choiced] == "archer":
+                    "inventory": {
+                        "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"mana_potion": 5}}}
+            elif "stamina" in CLASSES[class_choiced]: # Mas se a classe usa STAMINA (tipo o Guerreiro ou Arqueiro)...
+                if class_choiced == "archer":
                     player_data = {
                         "name": name,
                         "class": CLASSES[class_choiced]["name"],
-                        "level": 0, "xp": 0, "money": 0,
+                        "level": 0,
+                        "xp": 0,
+                        "money": 0,
                         "xp_to_level": 100,
                         "stage_level": 1,
                         "max_health": CLASSES[class_choiced]["max_health"],
                         "health": CLASSES[class_choiced]["health"],
                         "stamina": CLASSES[class_choiced]["stamina"],
-                        "inventory": CLASSES[class_choiced]["starter_weapons"],
-                        "arrows": CLASSES[class_choiced]["starter_arrows"],
+                        "inventory": {
+                            "weapons": CLASSES[class_choiced]["starter_weapons"],
+                            "potions": {"stamina_potion": 5}
+                        },
+                        "arrows": CLASSES[class_choiced]["starter_arrows"]
                     }
                 # Enche a ficha do jogador com os status de stamina
-                player_data = {
-                    "name": name,
-                    "class": CLASSES[class_choiced]["name"],
-                    "level": 1, "xp": 0, "money": 0,
-                    "stage_level": 1,
-                    "xp_to_level": 100,
-                    "health": CLASSES[class_choiced]["health"],
-                    "max_health": CLASSES[class_choiced]["max_health"],
-                    "stamina": CLASSES[class_choiced]["stamina"],
-                    "inventory": CLASSES[class_choiced]["starter_weapons"] }
+                else:
+                    player_data = {
+                        "name": name,
+                        "class": CLASSES[class_choiced]["name"],
+                        "level": 1, "xp": 0, "money": 0,
+                        "stage_level": 1,
+                        "xp_to_level": 100,
+                        "health": CLASSES[class_choiced]["health"],
+                        "max_health": CLASSES[class_choiced]["max_health"],
+                        "stamina": CLASSES[class_choiced]["stamina"],
+                        "inventory": {
+                             "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"stamina_potion": 5},
+                        },
+                    }
             break # Quebra o loop infinito do "While True" porque o jogador foi criado com sucesso!
         clear()
 
