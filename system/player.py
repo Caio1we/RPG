@@ -60,7 +60,7 @@ def create_player():
                     "max_mana": CLASSES[class_choiced]["max_mana"],
                     "mana": CLASSES[class_choiced]["mana"], 
                     "inventory": {
-                        "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"mana_potion": {"name": "Poção de mana", "quantity": 5}},
+                        "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"mana_potion": {"name": "Poção de mana", "quantity": 5}, "health_potion": {"name": "Poção de vida", "quantity": 5}},
                     },
                 }
             elif "stamina" in CLASSES[class_choiced]: # Mas se a classe usa STAMINA (tipo o Guerreiro ou Arqueiro)...
@@ -75,9 +75,9 @@ def create_player():
                     "max_stamina": CLASSES[class_choiced]["max_stamina"],
                     "stamina": CLASSES[class_choiced]["stamina"],
                     "inventory": {
-                        "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"stamina_potion": {"name": "Poção de stamina", "quantity": 5}},
-                    },
-                }
+                        "weapons": CLASSES[class_choiced]["starter_weapons"], "potions": {"stamina_potion": {"name": "Poção de stamina", "quantity": 5}, "health_potion": {"name": "Poção de vida", "quantity": 5}}
+                        },
+                    }
             break # Quebra o loop infinito do "While True" porque o jogador foi criado com sucesso!
         clear()
 
