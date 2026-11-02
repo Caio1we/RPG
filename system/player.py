@@ -105,13 +105,17 @@ def create_player():
 
     return player_data
 
-def level_up(player):
+def level_up(player, atribute):
     player["level"] += 1
     player["xp"] -= player["xp_to_level"]
     player["xp_to_level"] = int(player["xp_to_level"] * 1.5)
     player["max_health"] += 50
-    heal_player(player, 25)
+    heal_amount(player, "health", 25)
+    player["max_" + atribute] += 25
+    player[atribute] += 50
     print(f"LEVEL UP! você subiu para o nivel {player["level"]}")
+
+
 def gain_xp(player, amount):
     player["xp"] += amount
     while player["xp"] >= player["xp_to_level"]:
