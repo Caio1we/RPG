@@ -37,7 +37,12 @@ def get_avaiable_potions_per_class(player_class):
 def buy_item(player_data, item):
     if player_data["money"] >= item["price"]:
         player_data["money"] -= item["price"]
-        player_data["inventory"]["weapons"].update({item["name"]: item})
+        
+        match item["type"]:
+            case "potion":
+                if item["identifier"] in player_data["inventory"]["potions"]:
+                    player_data["inventory"]["potions"][item["identifier"]]["quantity"] += 1
+        player_data["inventory"]["weapons"].update({item["identifier"]: item})
         print("Compra realizada com sucesso!")
     else:
         print("Você não tem ouro suficiente para comprar esse item.")

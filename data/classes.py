@@ -9,6 +9,7 @@ CLASSES = {
         "starter_weapons": {
 
             "wooden_staff":{
+                "identifier": "wooden_staff",
                 "name": "Cajado de madeira",
                 "rarity": "common",
                 "type": "staff",
@@ -19,6 +20,7 @@ CLASSES = {
             },
 
             "thunder": {
+                "identifier": "thunder",
                 "name": "Feitiço de trovão",
                 "rarity": "common",
                 "type": "spell",
@@ -38,6 +40,7 @@ CLASSES = {
         "description": "guardião de um antigo reino perdido e ainda pensa que está protegendo uma cidade. Ele é habilidoso com armas corpo a corpo, mas não tem habilidade com outros tipos de armas. Começa com uma espada longa e uma espada curta.",
         "starter_weapons": {
             "long_sword": {
+                "identifier": "long_sword",
                 "name": "Espada Longa",
                 "rarity": "common",
                 "type": "sword",

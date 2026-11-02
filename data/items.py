@@ -1,5 +1,6 @@
 SWORDS = {
     "rusty_sword": {
+        "identifier": "rusty_sword",
         "name": "Espada enferrujada",
         "rarity": "common",
         "type": "sword",
@@ -10,6 +11,7 @@ SWORDS = {
         "price": 20,
     },
     "iron_sword": {
+        "identifier": "iron_sword",
         "name": "Espada de ferro",
         "rarity": "uncommon",
         "type": "sword",
@@ -20,6 +22,7 @@ SWORDS = {
         "price": 50,
     },
     "glacial_sword": {
+        "identifier": "glacial_sword",
         "name": "Espada glacial",
         "rarity": "rare",
         "type": "sword",

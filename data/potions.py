@@ -1,5 +1,6 @@
 POTIONS = {
     "health_potion": {
+        "identifier": "health_potion",
         "atribute": "health", 
         "name": "Poção de Vida",
         "description": "Recupera 30 pontos de vida.",
@@ -9,6 +10,7 @@ POTIONS = {
     },
 
     "mana_potion": {
+        "identifier": "mana_potion",
         "atribute": "mana",
         "name": "Poção de Mana",
         "description": "Recupera 40 pontos de mana.",
@@ -18,6 +20,8 @@ POTIONS = {
     },
 
     "stamina_potion": {
+        "identifier": "stamina_potion",
+        "type": "potion",
         "atribute": "stamina",
         "name": "Poção de Stamina",
         "description": "Recupera 40 pontos de stamina.",
