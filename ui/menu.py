@@ -13,7 +13,7 @@ def select_weapon_menu(inventory):
     index = 1
     weapons_name = {}
     for i, weapon in enumerate(inventory.values(), 1):
-        print(f"[{index}] - {weapon["name"]}")
+        print(f"[{index}] - {weapon["name"]} - {weapon["damage"]} de dano - {weapon["cost"]} custo")
         weapons_name.update({index: weapon})
         index += 1
     weapon_choiced = int(input("Selecione a arma: "))
