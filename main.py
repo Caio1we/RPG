@@ -2,7 +2,7 @@ from data.classes import CLASSES
 from system.player import create_player
 from system.enemy import create_enemy
 from system.combat import battle
-from ui.menu import menu, shop_menu
+from ui.menu import menu, shop_menu, profile_menu
 
 player_data = {}
 
@@ -32,7 +32,10 @@ while True:
 
             
         case 2:
-            print(player_data)
+            if not player_data:
+                print("Você precisa criar um personagem antes de acessar o perfil.")
+                continue
+            profile_menu(player_data, player_data["class"])
         case 3:
             shop_menu(player_data)
         case 0:

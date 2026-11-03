@@ -66,4 +66,30 @@ def shop_menu(player_data):
     buy_item(player_data, itens[choiced_item - 1])
 
 
+def profile_menu(player_data, player_class):
+    if not player_data:
+        print("Você precisa criar um personagem antes de acessar o perfil.")
+        return
+    print(f"Nome: {player_data['name']}")
+    print(f"Classe: {player_data['class']}")
+    print(f"Nível: {player_data['level']}")
+    print(f"Experiência: {player_data['xp']}")
+    print(f"Vida Maxima: {player_data['max_health']}")
+    print(f"Vida: {player_data['health']}")
+    if player_class == "mage":
+        print(f"Mana Maxima: {player_data['max_mana']}")
+        print(f"Mana: {player_data['mana']}")
+    else:
+        print(f"Stamina Maxima: {player_data['max_stamina']}")
+        print(f"Stamina: {player_data['stamina']}")
+    print(f"Dinheiro: {player_data['money']}")
+    print("Inventário:")
+    print("Armas:")
+    for item in player_data["inventory"]["weapons"].values():
+        print(f"- {item['name']} - Dano: {item['damage']} - Custo: {item['cost']}")
+    print("Poções:")
+    for item in player_data["inventory"]["potions"].values():
+        print(f" {item["name"]} - Atributo: {POTIONS[item["identifier"]]["atribute"]} - Restaura: {POTIONS[item["identifier"]]["restore_amount"]}, Quantidade: {item["quantity"]}")
+
+
 
